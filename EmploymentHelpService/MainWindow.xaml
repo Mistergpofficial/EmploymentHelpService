@@ -1,0 +1,66 @@
+﻿<Window x:Class="EmploymentHelpService.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmploymentHelpService"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="LightBlue" HorizontalAlignment="Center" Width="800" Margin="0,0,0,3">
+        <Label Content="Job Type" Foreground="Maroon" FontSize="13" HorizontalAlignment="Left" Margin="9,33,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="-0.167,-2.31" Height="24"/>
+        <ComboBox x:Name="txtJobType" HorizontalAlignment="Left" Margin="138,38,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="-0.147,-1.683" SelectedItem="">
+            <ComboBoxItem Content="Choose a job type"></ComboBoxItem>
+            <ComboBoxItem Content="Construction"></ComboBoxItem>
+            <ComboBoxItem Content="Gardening"></ComboBoxItem>
+            <ComboBoxItem Content="Office"></ComboBoxItem>
+            <ComboBoxItem Content="Retail"></ComboBoxItem>
+            <ComboBoxItem Content="Warehouse"></ComboBoxItem>
+        </ComboBox>
+        <Label Content="Start Date" HorizontalAlignment="Left" Margin="9,109,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.2,0.502"/>
+        <Label Content="Salary" HorizontalAlignment="Left" Margin="9,72,0,0" VerticalAlignment="Top" Width="44"/>
+        <DatePicker x:Name="txtStartDate" HorizontalAlignment="Left" Margin="138,111,0,0" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Margin="138,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="24" />
+        <Label Content="Experience" HorizontalAlignment="Left" Margin="9,243,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.923,0.387"/>
+        <TextBox x:Name="txtExperience" HorizontalAlignment="Left" Margin="138,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="22"/>
+        <Label Content="Driver's License" HorizontalAlignment="Left" Margin="11,159,0,0" VerticalAlignment="Top" Width="90"/>
+        <ComboBox x:Name="txtDriversLicense" HorizontalAlignment="Left" Margin="138,159,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.125,-0.59" Height="24">
+            <ComboBoxItem Content="Select an option"></ComboBoxItem>
+            <ComboBoxItem Content="Yes"></ComboBoxItem>
+            <ComboBoxItem Content="No"></ComboBoxItem>
+        </ComboBox>
+        <Label Content="Unspent Criminal Record" HorizontalAlignment="Left" Margin="11,198,0,0" VerticalAlignment="Top" Width="148"/>
+        <Button x:Name="btnAddVacancy" Background="Maroon" Foreground="white" Content="Add Vacancy" HorizontalAlignment="Left" Margin="138,341,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.281,1.956" Click="btnNewVacancy_Click" Height="22">
+        </Button>
+        <Label Content="Minimum Qualification" HorizontalAlignment="Left" Margin="9,274,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="txtQualification" HorizontalAlignment="Left" Margin="138,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="24"/>
+        <DataGrid x:Name="lstVacancy"  Margin="393,51,27,254" />
+        <Label Content="Vacancy Record" Background="Maroon" Foreground="White" HorizontalAlignment="Left" Margin="568,20,0,0" VerticalAlignment="Top" Width="102"/>
+        <DataGrid x:Name="lstShortlist"  Margin="393,199,10,28">
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="">
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnDelete" Content=" Remove Client" Click="BtnDelete_Click" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Maximum Distance" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.689,0.728"/>
+        <TextBox x:Name="txtDistance" HorizontalAlignment="Left" Margin="138,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Height="26" RenderTransformOrigin="0.593,1.553"/>
+        <RadioButton x:Name="rbYes" GroupName="decision"  HorizontalAlignment="Left" Margin="164,204,0,0" VerticalAlignment="Top" Width="66" Checked="rb_Checked">Yes</RadioButton>
+        <RadioButton x:Name="rbNo" GroupName="decision"  HorizontalAlignment="Left" Margin="221,204,0,0" VerticalAlignment="Top" Checked="rb_Checked">No</RadioButton>
+        <Button x:Name="matchClient" Background="Maroon" Foreground="white" Content="Match Client" HorizontalAlignment="Left" Margin="568,167,0,0" VerticalAlignment="Top" Click="btnMatchClient_Click" Height="27" RenderTransformOrigin="0.845,-0.259"/>
+        <Label Content="EMPLOYMENT HELP SERVICE - 40602610" Foreground="Maroon" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="252,4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Miles" HorizontalAlignment="Left" Margin="261,305,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnShowOrganization" Background="Maroon" Foreground="White" Content="Show Organization" HorizontalAlignment="Left" Margin="9,365,0,0" Click="btnDisplayOrganization_Click" VerticalAlignment="Top" Height="24" Width="124"/>
+        <Button x:Name="btnArrangeInterview" Background="Maroon" Foreground="White" Content="Schedule Interview" HorizontalAlignment="Left" Margin="274,365,0,0" Click="btnScheduleInterview_Click" VerticalAlignment="Top" Height="24" Width="114"/>
+        <Button Content="Show Clients" Background="Maroon" Foreground="White" HorizontalAlignment="Left" Margin="164,368,0,0" VerticalAlignment="Top" Width="75" Click="btnDisplayClient_Click"/>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="EmploymentHelpService.ClientDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmploymentHelpService"
+        mc:Ignorable="d"
+        Title="ClientDetails" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <DataGrid x:Name="dgClient1" Margin="71,80,81,79" Background="Gray"/>
+        <Label Content="Client Record" Background="Maroon" Foreground="White" HorizontalAlignment="Left" Margin="308,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="EMPLOYMENT HELP SERVICE - 40602610" Foreground="Maroon" FontWeight="ExtraBold" HorizontalAlignment="Left" Margin="252,4,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
